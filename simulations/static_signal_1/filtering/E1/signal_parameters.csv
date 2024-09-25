@@ -1,2 +1,0 @@
-spde_type,diffusion,noise_type,noise_coefficient,covariance_radius,covariance_decay
-heat,0,add_white,0.01,0,0

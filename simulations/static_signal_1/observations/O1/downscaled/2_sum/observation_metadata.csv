@@ -1,2 +1,0 @@
-time_multiplier,spatial_multiplier,timesteps_obs,dt_obs,dx_obs,dim_x_obs,dim_y_obs
-1.0,2.0,4000.0,0.005,1.0,16.0,16.0
