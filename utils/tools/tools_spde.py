@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 
-import spde.spde_2d_simulations as spde_2d_simulations
+import utils.spde.spde_2d_simulations as spde_2d_simulations
 
 ###############################################################################################################################################################################
 

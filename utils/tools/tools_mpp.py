@@ -5,12 +5,12 @@ from shutil import copyfile
 
 
 
-import tools.tools_spde as tools_spde
-import tools.tools_os as tools_os
+import utils.tools.tools_spde as tools_spde
+import utils.tools.tools_os as tools_os
 
-import poisson_process.poisson_process_simulation as poisson_process_simulation
+import utils.poisson_process.poisson_process_simulation as poisson_process_simulation
 
-import filtering.observations_module as observations_module
+import utils.filtering.observations_module as observations_module
 
 
 

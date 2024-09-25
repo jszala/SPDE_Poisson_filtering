@@ -6,14 +6,14 @@ from shutil import copyfile
 
 
 
-import tools.tools_spde as tools_spde
-import tools.tools_os as tools_os
-import tools.tools_mpp as tools_mpp
+import utils.tools.tools_spde as tools_spde
+import utils.tools.tools_os as tools_os
+import utils.tools.tools_mpp as tools_mpp
 
-import filtering.filter_module as filter_module
-import filtering.observations_module as observations_module
+import utils.filtering.filter_module as filter_module
+import utils.filtering.observations_module as observations_module
 
-import spde.spde_2d_simulations as spde_2d_simulations
+import utils.spde.spde_2d_simulations as spde_2d_simulations
 
 
 ###############################################################################################################################################################################

@@ -3,8 +3,8 @@ from shutil import copyfile
 import pandas as pd
 
 
-import tools.tools_spde as tools_spde
-import tools.tools_mpp as tools_mpp
+import utils.tools.tools_spde as tools_spde
+import utils.tools.tools_mpp as tools_mpp
 
 # returns the working_dir and creates the general parent tree structure
 
