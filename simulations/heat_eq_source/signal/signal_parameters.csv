@@ -1,0 +1,2 @@
+spde_type,diffusion,noise_type,noise_coefficient,covariance_radius,covariance_decay
+heat,2,mult_coloured,0.05,3,1

@@ -1,0 +1,2 @@
+dt,dx,timesteps,dim_x,dim_y,Euler_step
+0.005,0.5,1000,32,32,explicit
