@@ -4,6 +4,8 @@
 # Files to not ignore
 !/simulations/static_signal_source
 !/simulations/heat_eq_source
+!/simulations/reaction_diffusion_spde_source_1
+!/simulations/reaction_diffusion_spde_source_2
 
 
 
