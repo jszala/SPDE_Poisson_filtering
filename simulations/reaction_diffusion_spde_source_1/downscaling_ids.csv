@@ -1,0 +1,6 @@
+downscaling_type,downscaling_factor,partial_downscaling_method
+sum,2,0
+sum,4,0
+sum,8,0
+sum,16,0
+sum,32,0

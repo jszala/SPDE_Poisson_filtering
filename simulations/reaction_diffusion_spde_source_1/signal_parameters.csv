@@ -1,0 +1,2 @@
+spde_type,diffusion_act,noise_type_act,noise_coefficient_act,covariance_radius_act,covariance_decay_act,diffusion_inh,noise_type_inh,noise_coefficient_inh,covariance_radius_inh,covariance_decay_inh,alpha_1,alpha_2,alpha_3,beta,gamma,skew,potential
+fitzhugh_nagumo,2,mult_coloured,0.05,3,1,1,add_white,0.5,0,0,0.4,3,5,5,1,1,14

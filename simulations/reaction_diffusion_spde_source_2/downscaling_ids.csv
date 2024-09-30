@@ -1,0 +1,6 @@
+downscaling_type,downscaling_factor,partial_downscaling_method
+partial,2,center
+partial,4,center
+partial,8,center
+partial,16,center
+partial,32,center
