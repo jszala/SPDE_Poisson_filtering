@@ -1,0 +1,44 @@
+grid:
+  nx: 32
+  ny: 32
+  dx: 0.1
+  dt: 0.002
+  steps: 100
+model:
+  diffusion_u: 0.02
+  diffusion_v: 0.1
+  alpha_1: 0.5
+  alpha_2: 0.75
+  alpha_3: 1.0
+  beta: 10.0
+  gamma: 0.02
+  skew: 40.0
+  potential: 0.1
+  sigma_u: 0.002
+  sigma_v: 0.002
+warmup:
+  min_steps: 100
+  max_steps: 2500
+  check_every: 10
+  initial_u_mean: 0.72
+  initial_u_std: 0.4
+  initial_v_mean: 0.1
+  initial_v_std: 0.03
+  active_threshold: 0.72
+  min_active_fraction: 0.02
+  max_active_fraction: 0.85
+  min_spatial_contrast: 0.18
+observation:
+  coefficient: 180.0
+  decay: 0.0
+  lambda_min: 1.0e-8
+  lambda_max: 1.0e+7
+  resolutions: [32, 16, 8, 4, 2]
+filter:
+  particles: 512
+  prior_std_u: 0.08
+  prior_std_v: 0.04
+  ess_fraction: 0.5
+execution:
+  seed: 20260819
+  workers: 1

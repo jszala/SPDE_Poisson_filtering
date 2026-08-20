@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and the associated thesis chapter."
+title: "SPDE Poisson Filtering"
+type: software
+version: 2.0.0
+date-released: 2026-08-19
+authors:
+  - family-names: Szalankiewicz
+    given-names: Jan
+repository-code: "https://github.com/jszala/SPDE_Poisson_filtering"
+license: BSD-3-Clause
+keywords:
+  - particle filtering
+  - stochastic partial differential equations
+  - Poisson observations
+  - FitzHugh-Nagumo

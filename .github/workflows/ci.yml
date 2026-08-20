@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, "v2-*"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest
+
+  quick-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e .
+      - run: spde-pf run --config configs/quick.yaml --output runs/quick --workers 2 --no-progress
+      - name: Validate seeded acceptance metrics
+        run: >-
+          python -c "import csv, json, pathlib;
+          root=pathlib.Path('runs/quick');
+          rows=list(csv.DictReader((root/'metrics.csv').open()));
+          manifest=json.loads((root/'manifest.json').read_text());
+          assert all(float(r['late_rmse']) < float(r['late_open_loop_rmse']) for r in rows);
+          assert manifest['signal_diagnostics']['trajectory_q005'] >= -0.1;
+          assert manifest['signal_diagnostics']['trajectory_q995'] <= 1.1;
+          assert manifest['signal_diagnostics']['median_spatial_contrast'] >= 0.18;
+          assert (root/'state_observation_filter.png').is_file();
+          assert (root/'rmse_by_resolution.png').is_file()"
